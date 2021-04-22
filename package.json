@@ -1,0 +1,70 @@
+{
+  "name": "ohmswich-backend",
+  "version": "0.0.1",
+  "description": "Ohmswich Backend APIs",
+  "keywords": [
+    "ohmswich",
+    "homes-switch"
+  ],
+  "private": false,
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "directories": {
+    "test": "__tests__"
+  },
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-babel",
+    "test": "cross-env NODE_ENV=test jest",
+    "test:watch": "cross-env NODE_ENV=test jest --watch",
+    "test:cover": "cross-env NODE_ENV=test jest --coverage",
+    "lint": "eslint \"src/**/*.js\"",
+    "start": "npm run build && node ./build/index.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/index.js"
+  },
+  "author": {
+    "name": "Ohmswich Devs",
+    "email": "ohmswich@ohmswich.com"
+  },
+  "homepage": "https://github.com/dev-ohmswich/ohmswich-be#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-ohmswich/ohmswich-be.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dev-ohmswich/ohmswich-be/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.10.0",
+    "bcrypt": "^4.0.1",
+    "chalk": "^4.0.0",
+    "cors": "^2.8.5",
+    "datauri": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "randomstring": "^1.1.5",
+    "supertest": "^4.0.2",
+    "uuid": "^8.0.0",
+    "yup": "^0.28.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "babel-jest": "^25.4.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.4.0",
+    "nodemon": "^2.0.3",
+    "parcel-bundler": "^1.12.4"
+  },
+  "browserslist": [
+    "last 1 Chrome versions"
+  ]
+}
