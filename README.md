@@ -2,7 +2,7 @@
 
 ## Backend | Node Js
 
-Welcome to main branch
+Welcome to dev branch
 
 Here is the DEFAULT branch till we are finally done.
 
